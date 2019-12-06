@@ -6,6 +6,8 @@ import Navbar from './Navbar';
 
 class App extends React.Component {
 
+  _isMounted = false;
+
   state = {
     playerData: []
   }
@@ -13,13 +15,20 @@ class App extends React.Component {
   componentDidMount() {
     console.log('cDM is running')
 
+    this._isMounted = true;
+
     axios.get('http://localhost:5000/api/players')
       .then(res => {
-        console.log(res);
-
-        this.setState( { playerData: res.data } )
+ 
+        if (this._isMounted) {
+          this.setState( { playerData: res.data } );
+        }
       })
     
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
@@ -31,7 +40,7 @@ class App extends React.Component {
           <Navbar />
         </header>
 
-        <div>
+        <div data-testid='player' class='player-info'>
           {this.state.playerData.map ( ( player ) => {
             return(
               <div>
