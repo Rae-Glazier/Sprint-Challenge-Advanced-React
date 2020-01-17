@@ -25,7 +25,7 @@ test('names come back', () => {
 })
 
 test('player info', () => {
-  const {getByTestId} = render(<App />);
+  const {getByTestId} = render(<App />);  
 
   getByTestId(/player/i);
 })

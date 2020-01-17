@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
       <nav className="navbar">
-          <h1>Women's World Cup</h1>
+          <h1 className='text'>Women's World Cup</h1>
         <div className="dark-mode__toggle">
           <button data-testid='toggle-button'
             onClick={toggleMode}

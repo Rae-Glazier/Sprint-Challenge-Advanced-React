@@ -3,28 +3,40 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Navbar from './Navbar';
+import { Players } from './playerInfo';
+
+
 
 class App extends React.Component {
+
+
+  // the _isMounted is to control the memory leaks. Wasn't sure any other way to get rid of the error but google provided an answer. 
 
   _isMounted = false;
 
   state = {
-    playerData: []
+    players: []
   }
 
   componentDidMount() {
     console.log('cDM is running')
-
     this._isMounted = true;
 
-    axios.get('http://localhost:5000/api/players')
+    axios
+      .get('http://localhost:5000/api/players')
       .then(res => {
- 
+
         if (this._isMounted) {
-          this.setState( { playerData: res.data } );
+
+          this.setState({
+            players: res.data
+          })
+
         }
+        
+
       })
-    
+      .catch(err => console.log(err, 'cDM error'))
   }
 
   componentWillUnmount() {
@@ -40,17 +52,11 @@ class App extends React.Component {
           <Navbar />
         </header>
 
-        <div data-testid='player' class='player-info'>
-          {this.state.playerData.map ( ( player ) => {
-            return(
-              <div>
-                <h2>Name: {player.name} </h2>
-                <h2>Country: {player.country} </h2>
-              </div>
-            )
-          })}
-        </div>
 
+        <div className='PlayerCard' data-testid='player'>
+          <Players players={this.state.players}/>
+        </div>
+        
       </div>
     );
   }

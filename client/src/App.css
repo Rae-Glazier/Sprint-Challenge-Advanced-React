@@ -1,16 +1,22 @@
 .App {
   text-align: center;
+  background-color: lightgray;
 }
 
 .App-header {
-  /* background-color: #6078a8; */
-  min-height: 100vh;
+  background-color: #6078a8;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(139, 20, 150);
+  color: white;
+}
+
+.App-header .text {
+  padding: 2%;
+  
 }
 
 .navbar {
@@ -27,16 +33,16 @@
 }
 
 .dark-mode__toggle {
-  background: papayawhip;
+  background: rgb(197, 231, 165);
   border-radius: 50px;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   height: 20px;
   position: relative;
   width: 40px;
 }
 
 .toggle {
-  background: #f68819;
+  background: #ee299c;
   border-radius: 50px;
   height: 18px;
   left: 0;
@@ -51,10 +57,36 @@
 
 .dark-mode {
   color: #fff;
-  background-color: #313843;
+  background-color: #5a616d; 
+}
 
-  .navbar {
-    background-color: #1F2022;
-    border: none;
-  }
+.dark-mode .navbar {
+  background-color: rgb(69, 53, 70);
+  border: none;
+}
+
+.PlayerCard {
+  border: 2px dashed #6078a8;
+  background: lightgoldenrodyellow;
+  margin: 2% 5%;
+  padding: 0 5%;
+}
+
+.PlayerCard .player {
+  border: 1px dotted #ee299c;
+  background-color: #6078a8;
+  color: azure;
+  margin: 2%;
+  padding: 2%;
+  width: 90%;
+  
+}
+
+.dark-mode .PlayerCard {
+  background-color: #6078a8;
+}
+
+.dark-mode .PlayerCard .player {
+  background: lightgoldenrodyellow;
+  color: #6078a8
 }
