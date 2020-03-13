@@ -4,8 +4,10 @@ import './App.css';
 import axios from 'axios';
 import Navbar from './Navbar';
 import { Players } from './playerInfo';
-import MyResponsiveBar from './Web28 Stretch/graph';
-import DataGraphs from './Web28 Stretch/data';
+import {Route} from 'react-router-dom';
+import StretchApp from './Web28 Stretch/StretchApp';
+
+
 
 
 
@@ -52,16 +54,16 @@ class App extends React.Component {
 
         <header className="App-header">
           <Navbar />
+          <Route path='/stretchapp'><StretchApp/></Route>
         </header>
 
 
         <div className='PlayerCard' data-testid='player'>
-          <Players players={this.state.players}/>
+          <Route exact path='/'><Players players={this.state.players}/></Route>
         </div>
 
         <div className='GraphCard'>
-          <MyResponsiveBar/>
-          <DataGraphs/>
+          
         </div>
         
       </div>
