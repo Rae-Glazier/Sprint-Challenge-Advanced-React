@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
       <nav className="navbar">
           <Link to='/' className='text'>Women's World Cup</Link>
-          <Link to='/stretchapp'>Stretch App</Link>
+          {/* <Link to='/stretchapp'>Stretch App</Link> */}
         <div className="dark-mode__toggle">
           <button data-testid='toggle-button'
             onClick={toggleMode}
