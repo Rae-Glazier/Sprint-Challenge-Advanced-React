@@ -4,9 +4,13 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "@nivo/bar": "^0.61.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "react": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"
