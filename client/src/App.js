@@ -4,6 +4,8 @@ import './App.css';
 import axios from 'axios';
 import Navbar from './Navbar';
 import { Players } from './playerInfo';
+import MyResponsiveBar from './Web28 Stretch/graph';
+import DataGraphs from './Web28 Stretch/data';
 
 
 
@@ -55,6 +57,11 @@ class App extends React.Component {
 
         <div className='PlayerCard' data-testid='player'>
           <Players players={this.state.players}/>
+        </div>
+
+        <div className='GraphCard'>
+          <MyResponsiveBar/>
+          <DataGraphs/>
         </div>
         
       </div>
