@@ -4,7 +4,7 @@ import './App.css';
 import axios from 'axios';
 import Navbar from './Navbar';
 import { Players } from './playerInfo';
-import {Route} from 'react-router-dom';
+// import {Route} from 'react-router-dom';
 // import StretchApp from './Web28 Stretch/StretchApp';
 
 
@@ -59,7 +59,7 @@ class App extends React.Component {
 
 
         <div className='PlayerCard' data-testid='player'>
-          <Route exact path='/'><Players players={this.state.players}/></Route>
+          <Players players={this.state.players}/>
         </div>
         
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import  useDarkMode  from './useDarkMode';
 
@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
       <nav className="navbar">
-          <Link to='/' className='text'>Women's World Cup</Link>
+          <h1 className='text'>Women's World Cup</h1>
           {/* <Link to='/stretchapp'>Stretch App</Link> */}
         <div className="dark-mode__toggle">
           <button data-testid='toggle-button'
